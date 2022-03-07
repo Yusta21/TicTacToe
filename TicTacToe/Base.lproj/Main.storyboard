@@ -111,8 +111,29 @@
                     <view key="view" contentMode="scaleToFill" id="uQs-UJ-BX6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2le-3C-Mkh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTF-VU-wft">
+                                <rect key="frame" x="0.0" y="560" width="414" height="336"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eUP-uD-dbH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="lTF-VU-wft" secondAttribute="bottom" id="3bT-R6-NFb"/>
+                            <constraint firstItem="lTF-VU-wft" firstAttribute="top" secondItem="2le-3C-Mkh" secondAttribute="bottom" id="JEd-Zf-we8"/>
+                            <constraint firstItem="lTF-VU-wft" firstAttribute="top" secondItem="2le-3C-Mkh" secondAttribute="bottom" id="g52-VX-PPY"/>
+                            <constraint firstItem="2le-3C-Mkh" firstAttribute="trailing" secondItem="eUP-uD-dbH" secondAttribute="trailing" id="mYC-q5-0D9"/>
+                            <constraint firstItem="2le-3C-Mkh" firstAttribute="leading" secondItem="eUP-uD-dbH" secondAttribute="leading" id="mvR-zx-pMw"/>
+                            <constraint firstItem="lTF-VU-wft" firstAttribute="leading" secondItem="eUP-uD-dbH" secondAttribute="leading" id="nr8-GP-mBl"/>
+                            <constraint firstItem="lTF-VU-wft" firstAttribute="trailing" secondItem="eUP-uD-dbH" secondAttribute="trailing" id="oVf-dA-mKW"/>
+                            <constraint firstItem="lTF-VU-wft" firstAttribute="height" secondItem="2le-3C-Mkh" secondAttribute="height" multiplier="0.6" id="zJn-08-Djc"/>
+                            <constraint firstItem="2le-3C-Mkh" firstAttribute="top" secondItem="uQs-UJ-BX6" secondAttribute="top" id="zhT-IH-PLR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7Ts-sg-gsX"/>
                 </viewController>
