@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainView" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="813.04347826086962" y="-99.107142857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View-->
         <scene sceneID="PS4-kq-Y2K">
             <objects>
-                <viewController id="Mcu-b0-D7r" sceneMemberID="viewController">
+                <viewController id="Mcu-b0-D7r" customClass="SettingsView" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="00g-OF-pqC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="2160.8695652173915" y="348.88392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View-->
         <scene sceneID="Cec-5A-F1X">
             <objects>
-                <viewController id="8cS-yC-NHh" sceneMemberID="viewController">
+                <viewController id="8cS-yC-NHh" customClass="GameView" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uQs-UJ-BX6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
