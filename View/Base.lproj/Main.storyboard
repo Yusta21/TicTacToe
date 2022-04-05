@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W8u-l9-eQr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W8u-l9-eQr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZy-6T-XA9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="407.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="heo-4v-aST">
-                                        <rect key="frame" x="41.5" y="54" width="331" height="250.5"/>
+                                        <rect key="frame" x="41.5" y="61" width="331" height="285"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -32,27 +32,36 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7f-u4-hAh">
-                                <rect key="frame" x="0.0" y="358.5" width="414" height="537.5"/>
+                                <rect key="frame" x="0.0" y="407.5" width="414" height="488.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="nVI-NI-Bvv">
-                                        <rect key="frame" x="134.5" y="100" width="145" height="126"/>
+                                        <rect key="frame" x="124" y="50" width="166" height="126"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRH-td-4Yx">
-                                                <rect key="frame" x="0.0" y="0.0" width="145" height="31"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="166" height="31"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="PLAY"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="PLAY" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="14">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="8cS-yC-NHh" kind="show" id="8wb-f5-l6o"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWq-d4-f9p">
-                                                <rect key="frame" x="0.0" y="95" width="145" height="31"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="0.0" y="95" width="166" height="31"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="SETTINGS"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="SETTINGS" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="14">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="Mcu-b0-D7r" kind="show" id="xlr-6A-7h1"/>
                                                 </connections>
@@ -63,8 +72,8 @@
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <constraints>
                                     <constraint firstItem="nVI-NI-Bvv" firstAttribute="centerX" secondItem="r7f-u4-hAh" secondAttribute="centerX" id="Dpv-6A-JED"/>
-                                    <constraint firstItem="nVI-NI-Bvv" firstAttribute="width" secondItem="r7f-u4-hAh" secondAttribute="width" multiplier="0.35" id="j3W-JD-mh6"/>
-                                    <constraint firstItem="nVI-NI-Bvv" firstAttribute="top" secondItem="r7f-u4-hAh" secondAttribute="top" constant="100" id="zo4-HA-TtX"/>
+                                    <constraint firstItem="nVI-NI-Bvv" firstAttribute="width" secondItem="r7f-u4-hAh" secondAttribute="width" multiplier="0.4" id="j3W-JD-mh6"/>
+                                    <constraint firstItem="nVI-NI-Bvv" firstAttribute="top" secondItem="r7f-u4-hAh" secondAttribute="top" constant="50" id="zo4-HA-TtX"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -76,13 +85,17 @@
                             <constraint firstItem="zZy-6T-XA9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JUp-aC-abL"/>
                             <constraint firstItem="r7f-u4-hAh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xpv-El-zKw"/>
                             <constraint firstItem="zZy-6T-XA9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dNy-ij-7sD"/>
-                            <constraint firstItem="r7f-u4-hAh" firstAttribute="height" secondItem="zZy-6T-XA9" secondAttribute="height" multiplier="1.5" id="ejV-96-7hc"/>
+                            <constraint firstItem="r7f-u4-hAh" firstAttribute="height" secondItem="zZy-6T-XA9" secondAttribute="height" multiplier="1.2" id="ejV-96-7hc"/>
                             <constraint firstItem="zZy-6T-XA9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="n5b-Z8-PNt"/>
                             <constraint firstItem="r7f-u4-hAh" firstAttribute="top" secondItem="zZy-6T-XA9" secondAttribute="bottom" id="pjD-xE-raJ"/>
                             <constraint firstItem="r7f-u4-hAh" firstAttribute="top" secondItem="zZy-6T-XA9" secondAttribute="bottom" id="qFZ-7w-rtr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZVo-We-59C"/>
+                    <connections>
+                        <outlet property="settingsButton" destination="nVI-NI-Bvv" id="fX0-tf-fXX"/>
+                        <outlet property="startButton" destination="r7f-u4-hAh" id="Qfj-Hz-XqX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,18 +105,52 @@
         <scene sceneID="PS4-kq-Y2K">
             <objects>
                 <viewController id="Mcu-b0-D7r" customClass="SettingsView" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
-                    <label key="view" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="brH-ln-c3L">
+                    <view key="view" contentMode="scaleToFill" id="Bd3-54-oFY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="125" translatesAutoresizingMaskIntoConstraints="NO" id="rbV-Cg-FgQ">
+                                <rect key="frame" x="182.5" y="354.5" width="49" height="187"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ouB-8j-2lo">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FQg-tT-yuP">
+                                        <rect key="frame" x="0.0" y="156" width="51" height="31"/>
+                                        <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grF-Jq-7rL">
+                                <rect key="frame" x="156" y="576" width="102" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hard Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOy-24-NxG">
+                                <rect key="frame" x="155.5" y="296.5" width="103.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BEt-MG-fXU"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="TOy-24-NxG" firstAttribute="centerX" secondItem="Bd3-54-oFY" secondAttribute="centerX" id="Bx5-TT-ncc"/>
+                            <constraint firstItem="grF-Jq-7rL" firstAttribute="top" secondItem="rbV-Cg-FgQ" secondAttribute="bottom" constant="34.5" id="Ijz-o5-8za"/>
+                            <constraint firstItem="grF-Jq-7rL" firstAttribute="centerX" secondItem="Bd3-54-oFY" secondAttribute="centerX" id="IoS-P0-o6q"/>
+                            <constraint firstItem="rbV-Cg-FgQ" firstAttribute="centerY" secondItem="Bd3-54-oFY" secondAttribute="centerY" id="N3A-8c-9CT"/>
+                            <constraint firstItem="rbV-Cg-FgQ" firstAttribute="top" secondItem="TOy-24-NxG" secondAttribute="bottom" constant="34" id="WVN-Bb-vDg"/>
+                            <constraint firstItem="rbV-Cg-FgQ" firstAttribute="centerX" secondItem="Bd3-54-oFY" secondAttribute="centerX" id="XcN-p7-JsB"/>
+                        </constraints>
+                    </view>
                     <navigationItem key="navigationItem" id="FQe-RI-Awb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I76-fR-ZED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2160.8695652173915" y="348.88392857142856"/>
+            <point key="canvasLocation" x="1776.8115942028987" y="222.99107142857142"/>
         </scene>
         <!--Game View-->
         <scene sceneID="Cec-5A-F1X">
@@ -116,13 +163,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2le-3C-Mkh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z9t-Ip-PiH">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z9t-Ip-PiH">
                                         <rect key="frame" x="82" y="155" width="250" height="250"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NZa-iz-dOm">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NZa-iz-dOm">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="80"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrg-8b-tj7">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrg-8b-tj7" customClass="CustomButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -131,14 +178,12 @@
                                                         </constraints>
                                                         <color key="tintColor" systemColor="labelColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="X">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="55"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="buttonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="kll-KB-kox"/>
+                                                            <action selector="ButtonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="w7M-Zf-rA0"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op0-bs-Zfa">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op0-bs-Zfa" customClass="CustomButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="85" y="0.0" width="80" height="80"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -147,14 +192,12 @@
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="55"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="buttonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="wLJ-ig-8bM"/>
+                                                            <action selector="ButtonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="XVD-5r-Fqb"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsn-r7-XDi">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsn-r7-XDi" customClass="CustomButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="170" y="0.0" width="80" height="80"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -163,20 +206,18 @@
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="55"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="buttonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="yiW-Uz-WBy"/>
+                                                            <action selector="ButtonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="Hc9-uV-g5Y"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fac-Y3-cpm">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fac-Y3-cpm">
                                                 <rect key="frame" x="0.0" y="85" width="250" height="80"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHx-Sm-tqn">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHx-Sm-tqn" customClass="CustomButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -185,14 +226,12 @@
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="55"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="buttonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="NlL-S4-gei"/>
+                                                            <action selector="ButtonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="zbq-n2-lWk"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytl-1k-3d6">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytl-1k-3d6" customClass="CustomButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="85" y="0.0" width="80" height="80"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -201,14 +240,12 @@
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="55"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="buttonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="c1j-TE-DWE"/>
+                                                            <action selector="ButtonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="f7v-zO-JB4"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spu-rW-oTz">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spu-rW-oTz" customClass="CustomButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="170" y="0.0" width="80" height="80"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -217,19 +254,17 @@
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="55"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="buttonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="G6S-3Z-CTk"/>
+                                                            <action selector="ButtonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="XOp-iL-g8F"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9U4-9T-rme">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9U4-9T-rme">
                                                 <rect key="frame" x="0.0" y="170" width="250" height="80"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSk-jc-Axk">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSk-jc-Axk" customClass="CustomButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -238,14 +273,12 @@
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="55"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="buttonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="tWI-Hw-c04"/>
+                                                            <action selector="ButtonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="x4M-6X-oXl"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FZ-jp-ihZ">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FZ-jp-ihZ" customClass="CustomButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="85" y="0.0" width="80" height="80"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -254,14 +287,12 @@
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="55"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="buttonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="1am-6W-p4c"/>
+                                                            <action selector="ButtonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="dzr-OU-wVK"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr4-Kz-b2k">
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr4-Kz-b2k" customClass="CustomButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="170" y="0.0" width="80" height="80"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -270,11 +301,9 @@
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="55"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="buttonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="2j2-GP-3RN"/>
+                                                            <action selector="ButtonPressed:" destination="8cS-yC-NHh" eventType="touchUpInside" id="iFy-80-a3w"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -372,20 +401,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="7Ts-sg-gsX"/>
                     <connections>
-                        <outlet property="A1" destination="Xrg-8b-tj7" id="Pzm-Ng-CgM"/>
-                        <outlet property="A2" destination="Op0-bs-Zfa" id="7Df-Qc-uPO"/>
-                        <outlet property="A3" destination="fsn-r7-XDi" id="6uB-FC-14Y"/>
-                        <outlet property="B1" destination="DHx-Sm-tqn" id="gRX-3E-I7F"/>
-                        <outlet property="B2" destination="ytl-1k-3d6" id="g7d-bw-bg5"/>
-                        <outlet property="B3" destination="spu-rW-oTz" id="eG8-oE-1hg"/>
-                        <outlet property="C1" destination="uSk-jc-Axk" id="vmS-Qz-d5l"/>
-                        <outlet property="C2" destination="9FZ-jp-ihZ" id="F4m-Jy-C7x"/>
-                        <outlet property="C3" destination="vr4-Kz-b2k" id="pZl-oG-1gT"/>
+                        <outlet property="A1" destination="Xrg-8b-tj7" id="rly-kD-LB6"/>
+                        <outlet property="A2" destination="Op0-bs-Zfa" id="6tm-mW-Pal"/>
+                        <outlet property="A3" destination="fsn-r7-XDi" id="Uta-8I-DC3"/>
+                        <outlet property="B1" destination="DHx-Sm-tqn" id="5Ge-9w-Q7M"/>
+                        <outlet property="B2" destination="ytl-1k-3d6" id="Xip-Pg-FeR"/>
+                        <outlet property="B3" destination="spu-rW-oTz" id="RSh-dJ-geL"/>
+                        <outlet property="C1" destination="uSk-jc-Axk" id="VHS-ua-pog"/>
+                        <outlet property="C2" destination="9FZ-jp-ihZ" id="XPY-cQ-CMi"/>
+                        <outlet property="C3" destination="vr4-Kz-b2k" id="yEb-k7-8ms"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WS1-5L-CUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="-603"/>
+            <point key="canvasLocation" x="1777" y="-492"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Qa-wl-ZKe">

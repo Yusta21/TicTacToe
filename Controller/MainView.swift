@@ -12,8 +12,14 @@ class MainView : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.startButton.layer.cornerRadius = 8
+
+        
+        
     }
 
 
+    @IBOutlet weak var startButton: UIView!
+    @IBOutlet weak var settingsButton: UIStackView!
 }
 
