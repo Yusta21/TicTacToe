@@ -1,12 +1,9 @@
-//
-//  GameView.swift
-//  TicTacToe
-//
-//  Created by Noel H. Yusta on 7/3/22.
-//
+//  Created by Noel H. Yusta
+
 
 import UIKit
 import SwiftUI
+import CoreData
 
 class GameView: UIViewController {
 
@@ -14,7 +11,20 @@ class GameView: UIViewController {
     var X = "X"
     var O = "O"
     var turn = 1
+    var W : Int = 0
+    var L : Int = 0
+    var Hardmode = false
+    var Darkmode = false
+    let defaults = UserDefaults.standard
+    var playz : [CustomButton] = []
+    var boardfull = false
     
+    @IBOutlet weak var Back1: UIView!
+    @IBOutlet weak var Back2: UIView!
+    @IBOutlet weak var wins1: UILabel!
+    @IBOutlet weak var loses1: UILabel!
+    @IBOutlet weak var Wins: UILabel!
+    @IBOutlet weak var Loses: UILabel!
     
     
     enum playss {
@@ -23,6 +33,8 @@ class GameView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Darkmode = defaults.bool(forKey: "Dark")
+        Hardmode = defaults.bool(forKey: "Hard")
         buttonArray.append(A1)
         buttonArray.append(A2)
         buttonArray.append(A3)
@@ -33,24 +45,45 @@ class GameView: UIViewController {
         buttonArray.append(C2)
         buttonArray.append(C3)
         
-      
-     //   startIA()
-     
+        L = defaults.integer(forKey: "loses")
+        W = defaults.integer(forKey: "wins")
+        Wins.text = "\(W)"
+        Loses.text = "\(L)"
+        
+        if Hardmode == true {
+        startIA()
+        }
+        if Darkmode == true {
+            Back1.backgroundColor = .black
+            Back2.backgroundColor = .black
+            Wins.textColor = .white
+            wins1.textColor = .white
+            Loses.textColor = .white
+            loses1.textColor = .white
+        }
     }
     // MARK: alerts functions
     
-    func showAlert1(){
+    func showAlert1(){ // (sender: CustomButton)                      "\(sender.player)"
         let Alert = UIAlertController(title: "Winner is...", message: "X", preferredStyle: .alert)
-        Alert.addAction(UIAlertAction(title: "Restart ", style: .cancel,handler: {action in
+        Alert.addAction(UIAlertAction(title: "Restart ", style: .cancel,handler: { [self]action in
             self.resetTable()
+            W += 1
+            defaults.set(W, forKey: "wins")
+
+            Wins.text = "\(W)"
+            
         }))
         present(Alert, animated: true)
     }
 
         func showAlert2(){
             let Alert2 = UIAlertController(title: "Winner is...", message: "O", preferredStyle: .alert)
-            Alert2.addAction(UIAlertAction(title: "Restart ", style: .cancel,handler: {action in
+            Alert2.addAction(UIAlertAction(title: "Restart ", style: .cancel,handler: { [self]action in
                 self.resetTable()
+                L += 1
+                defaults.set(L, forKey: "loses")
+                Loses.text = "\(L)"
             }))
             present(Alert2, animated: true)
         }
@@ -82,13 +115,18 @@ class GameView: UIViewController {
             sender.setTitle(X, for: .normal)
             sender.Player = X
             sender.checked = true
-            turn = 2
-            checkforwinnerO()
             checkWinnerX()
             checkFullBoard()
+
+            if boardfull == false {
+            turn = 2
+
             AIHard(sender: sender)
-           
+            checkforwinnerO()
+            checkFullBoard()
             
+           
+            }
         }
         else {
             print("Already used")
@@ -106,11 +144,13 @@ class GameView: UIViewController {
             button.setTitle("", for: .normal)
                 button.checked = false
                 button.Player = ""
-           //startIA()
+                turn = 1
+                boardfull = false
+                if Hardmode == true {
+                     startIA()
         }
-            
-        }
-     
+    }
+}
     }
     
     
@@ -126,8 +166,7 @@ class GameView: UIViewController {
         if numberChecked == 9 {
             print("board full, tie")
             showAlert3()
-            turn = 1
-            
+            boardfull = true
         }
     }
     
@@ -139,64 +178,44 @@ class GameView: UIViewController {
                 buttonArray[number].checked = true
                 buttonArray[number].Player = O
                 buttonArray[number].setTitle(O, for: .normal)
-                turn = 1
+                checkforwinnerO()
                 checkFullBoard()
+                turn = 1
+                
             }
             else {
                 turn = 2
             }
         }
     }
-    
-    
+        
     // MARK: function for checking winner
     
     func checkWinnerX () {
         if A1.Player == X && B1.Player == X && C1.Player == X{
 print("winner X")
-            showAlert1()
-            //add win to player
-    }
+            showAlert1()}
         if A2.Player == X && B2.Player == X && C2.Player == X{
 print("winner X")
-            showAlert1()
-            //add win to player
-    }
+            showAlert1()}
         if A3.Player == X && B3.Player == X && C3.Player == X{
 print("winner X")
-            showAlert1()
-            //add win to player
-    }
+            showAlert1()}
         if A1.Player == X && A2.Player == X && A3.Player == X{
 print("winner X")
-            showAlert1()
-            
-            //add win to player
-    }
+            showAlert1()}
         if B1.Player == X && B2.Player == X && B3.Player == X{
 print("winner X")
-            showAlert1()
-            //add win to player
-    }
+            showAlert1()}
         if C1.Player == X && C2.Player == X && C3.Player == X{
 print("winner X")
-            showAlert1()
-            //add win to player
-    }
+            showAlert1()}
         if A3.Player == X && B2.Player == X && C1.Player == X{
 print("winner X")
-            showAlert1()
-            //add win to player
-    }
+            showAlert1()}
         if A1.Player == X && B2.Player == X && C3.Player == X{
 print("winner X")
-            showAlert1()
-            //add win to player
-           
-    }
-
-        
-      
+            showAlert1()}
     }
     
     // MARK: func to check AI win
@@ -204,7 +223,6 @@ print("winner X")
     func checkforwinnerO(){
         if A1.Player == O && A3.Player == O && A2.Player == O{
 print("winner O")
-            //add win to AI
             showAlert2()    }
         if B1.Player == O && B3.Player == O && B2.Player == O{
 print("winner O")
@@ -236,199 +254,54 @@ print("winner O")
     func AIHard(sender: CustomButton) {
        
         if sender == A1 {
-           var playz  = [A2,B1]
+            playz  = [A2,B1]
             while turn == 2 {
-                if playz.count <= 0 {
-                    AITurn()            }
-                let range = playz.count
-                let number = Int.random(in: 0...range-1)
-                if playz[number]!.checked == false {
-                    playz[number]!.checked = true
-                    playz[number]!.Player = O
-                    playz[number]!.setTitle(O, for: .normal)
-                    turn = 1
-                }
-                else {
-                    playz.remove(at: number)
-                    if playz.count <= 0 {
-                        AITurn()               }
-                    
-                }
-            }
-            
-        }
+             IAplay() }}
+        
         if sender == A2 {
-           var playz  = [A1,A3,B2]
+            playz  = [A1,A3,B2]
             while turn == 2 {
-                if playz.count <= 0 {
-                    AITurn()            }
-                let range = playz.count
-                let number = Int.random(in: 0...range-1)
-                if playz[number]!.checked == false {
-                    playz[number]!.checked = true
-                    playz[number]!.Player = O
-                    playz[number]!.setTitle(O, for: .normal)
-                    turn = 1
-                }
-                else {
-                    playz.remove(at: number)
-                    if playz.count <= 0 {
-                        AITurn()                }
-                    
-                }
-                
-            }
-            
-        }
+               IAplay() }}
         
         if sender == A3 {
-           var playz  = [A2,B3]
+            playz  = [A2,B3]
             while turn == 2 {
-                if playz.count <= 0 {
-                    AITurn()            }
-                let range = playz.count
-                let number = Int.random(in: 0...range-1)
-                if playz[number]!.checked == false {
-                    playz[number]!.checked = true
-                    playz[number]!.Player = O
-                    playz[number]!.setTitle(O, for: .normal)
-                    turn = 1
-                }
-                else {
-                    playz.remove(at: number)
-                    if playz.count <= 0 {
-                        AITurn()       }
-                    
-                }
-            }
-            
-        }
+             IAplay() }}
+        
         if sender == B1 {
-           var playz  = [A1,B2,C1]
+            playz  = [A1,B2,C1]
             while turn == 2 {
-                if playz.count <= 0 {
-                    AITurn()            }
-                let range = playz.count
-                let number = Int.random(in: 0...range-1)
-                if playz[number]!.checked == false {
-                    playz[number]!.checked = true
-                    playz[number]!.Player = O
-                    playz[number]!.setTitle(O, for: .normal)
-                    turn = 1
-                }
-                else {
-                    playz.remove(at: number)
-                    if playz.count <= 0 {
-                        AITurn()               }
-                    
-                }
-            }
-            
-        }
+               IAplay() }}
+    
         if sender == B2 {
-           var playz  = [A1,C3,C1,C3]
+            playz  = [A1,C3,C1,C3]
             while turn == 2 {
-                if playz.count <= 0 {
-                    AITurn()            }
-                let range = playz.count
-                let number = Int.random(in: 0...range-1)
-                if playz[number]!.checked == false {
-                    playz[number]!.checked = true
-                    playz[number]!.Player = O
-                    playz[number]!.setTitle(O, for: .normal)
-                    turn = 1
-                }
-                else {
-                    playz.remove(at: number)
-                    if playz.count <= 0 {
-                        AITurn()            }
-                    
-                }
-            }
-            
-        }
+               IAplay() }}
+        
         if sender == B3 {
-           var playz  = [A3,B2,C3]
+            playz  = [A3,B2,C3]
             while turn == 2 {
-                if playz.count <= 0 {
-                    AITurn()      }
-                let range = playz.count
-                let number = Int.random(in: 0...range-1)
-                if playz[number]!.checked == false {
-                    playz[number]!.checked = true
-                    playz[number]!.Player = O
-                    playz[number]!.setTitle(O, for: .normal)
-                    turn = 1
-                    print(playz.count)
-                }
-                else {
-                    playz.remove(at: number)
-                    if playz.count <= 0 {
-                        AITurn()      }
-                    
-                }
-            }
-            
-        }
+             IAplay() }}
+        
         if sender == C1 {
-           var playz  = [C2,B1]
+            playz  = [C2,B1]
             while turn == 2 {
-                let range = playz.count
-                let number = Int.random(in: 0...range-1)
-                if playz[number]!.checked == false {
-                    playz[number]!.checked = true
-                    playz[number]!.Player = O
-                    playz[number]!.setTitle(O, for: .normal)
-                    turn = 1
-                }
-                else {
-                    playz.remove(at: number)
-                    if playz.count <= 0 {
-                        AITurn()    }            }
-            }
-            
-        }
+               IAplay() }}
+        
         if sender == C2 {
-           var playz  = [C1,B2,C3]
+            playz  = [C1,B2,C3]
             while turn == 2 {
-                let range = playz.count
-                let number = Int.random(in: 0...range-1)
-                if playz[number]!.checked == false {
-                    playz[number]!.checked = true
-                    playz[number]!.Player = O
-                    playz[number]!.setTitle(O, for: .normal)
-                    turn = 1
-                }
-                else {
-                    playz.remove(at: number)
-                    if playz.count <= 0 {
-                        AITurn()}
-                        
-                    }
-                }
-            }
-            
+              IAplay()}}
         
         if sender == C3 {
-           var playz  = [C2,B3]
+            playz  = [C2,B3]
             while turn == 2 {
-                let range = playz.count
-                let number = Int.random(in: 0...range-1)
-                if playz[number]!.checked == false {
-                    playz[number]!.checked = true
-                    playz[number]!.Player = O
-                    playz[number]!.setTitle(O, for: .normal)
-                    turn = 1
-                }
-                else {
-                    playz.remove(at: number)
-                    if playz.count <= 0 {
-                        AITurn()    }            }
-            }
-            
+           IAplay()
+            }}
+        
+        
         }
-        checkFullBoard()
-        }
+    
     func startIA() {
         B2.checked = true
         B2.Player = O
@@ -436,7 +309,22 @@ print("winner O")
     }
    
     
-    
+    func IAplay() {
+        let range = playz.count
+        let number = Int.random(in: 0...range-1)
+        if playz[number].checked == false {
+            playz[number].checked = true
+            playz[number].Player = O
+            playz[number].setTitle(O, for: .normal)
+            turn = 1
+            checkforwinnerO()
+        }
+        else {
+            playz.remove(at: number)
+            if playz.count <= 0 {
+                AITurn()    }            }
+    }
+
     
 }
         

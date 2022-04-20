@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C1772AAF27DFDA68008A6313 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1772AAE27DFDA68008A6313 /* CustomButton.swift */; };
+		C18689FD27FC53BC00D8C852 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C18689FB27FC53BC00D8C852 /* DataModel.xcdatamodeld */; };
 		C19328C427D6349F00AD7F3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19328C327D6349F00AD7F3D /* AppDelegate.swift */; };
 		C19328C627D6349F00AD7F3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19328C527D6349F00AD7F3D /* SceneDelegate.swift */; };
 		C19328C827D6349F00AD7F3D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19328C727D6349F00AD7F3D /* MainView.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		C1772AAE27DFDA68008A6313 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C18689FC27FC53BC00D8C852 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		C19328C027D6349F00AD7F3D /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19328C327D6349F00AD7F3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C19328C527D6349F00AD7F3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +45,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C18689FA27FC535100D8C852 /* DataPersistance */ = {
+			isa = PBXGroup;
+			children = (
+				C18689FB27FC53BC00D8C852 /* DataModel.xcdatamodeld */,
+			);
+			path = DataPersistance;
+			sourceTree = "<group>";
+		};
 		C19328B727D6349F00AD7F3D = {
 			isa = PBXGroup;
 			children = (
+				C18689FA27FC535100D8C852 /* DataPersistance */,
 				C19328D927D6937300AD7F3D /* Controller */,
 				C19328D827D6936E00AD7F3D /* View */,
 				C19328D727D6936900AD7F3D /* Model */,
@@ -67,7 +78,6 @@
 			children = (
 				C19328C327D6349F00AD7F3D /* AppDelegate.swift */,
 				C19328C527D6349F00AD7F3D /* SceneDelegate.swift */,
-				C19328CC27D634A200AD7F3D /* Assets.xcassets */,
 				C19328CE27D634A200AD7F3D /* LaunchScreen.storyboard */,
 				C19328D127D634A200AD7F3D /* Info.plist */,
 			);
@@ -93,6 +103,7 @@
 		C19328D927D6937300AD7F3D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C19328CC27D634A200AD7F3D /* Assets.xcassets */,
 				C19328C727D6349F00AD7F3D /* MainView.swift */,
 				C19328DA27D694CC00AD7F3D /* GameView.swift */,
 				C19328DC27D694E600AD7F3D /* SettingsView.swift */,
@@ -174,6 +185,7 @@
 				C19328DD27D694E600AD7F3D /* SettingsView.swift in Sources */,
 				C19328C827D6349F00AD7F3D /* MainView.swift in Sources */,
 				C1772AAF27DFDA68008A6313 /* CustomButton.swift in Sources */,
+				C18689FD27FC53BC00D8C852 /* DataModel.xcdatamodeld in Sources */,
 				C19328C427D6349F00AD7F3D /* AppDelegate.swift in Sources */,
 				C19328DB27D694CC00AD7F3D /* GameView.swift in Sources */,
 				C19328C627D6349F00AD7F3D /* SceneDelegate.swift in Sources */,
@@ -396,6 +408,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C18689FB27FC53BC00D8C852 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C18689FC27FC53BC00D8C852 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = C18689FC27FC53BC00D8C852 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C19328B827D6349F00AD7F3D /* Project object */;
 }
