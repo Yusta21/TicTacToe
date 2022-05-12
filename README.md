@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Yusta21
 
-welcome to my TicTacToe App ready to play and have fun, this is worked with coredata, savinf info into the phone so its not lost!!
+welcome to my TicTacToe App ready to play and have fun, this is worked with coredata, saving info into the phone so its not lost!!
 
 
 - 👀 I’m interested in learning as much as i can, to get to be the best professional coder
